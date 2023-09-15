@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/loginFragment">
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.apiintegration.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_makeAChoice"
+            app:destination="@id/makeAChoice" />
+        <action
+            android:id="@+id/action_loginFragment_to_makeAChoice2"
+            app:destination="@id/makeAChoice" />
+    </fragment>
+    <fragment
+        android:id="@+id/makeAChoice"
+        android:name="com.example.apiintegration.MakeAChoice"
+        android:label="fragment_make_a_choice"
+        tools:layout="@layout/fragment_make_a_choice" >
+        <action
+            android:id="@+id/action_makeAChoice_to_weather"
+            app:destination="@id/weather" />
+        <action
+            android:id="@+id/action_makeAChoice_to_italianJoke"
+            app:destination="@id/italianJoke" />
+        <action
+            android:id="@+id/action_makeAChoice_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/weather"
+        android:name="com.example.apiintegration.Weather"
+        android:label="fragment_weather"
+        tools:layout="@layout/fragment_weather" >
+        <action
+            android:id="@+id/action_weather_to_makeAChoice"
+            app:destination="@id/makeAChoice" />
+    </fragment>
+    <fragment
+        android:id="@+id/italianJoke"
+        android:name="com.example.apiintegration.ItalianJoke"
+        android:label="fragment_italian_joke"
+        tools:layout="@layout/fragment_italian_joke" >
+        <action
+            android:id="@+id/action_italianJoke_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@+id/loginFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+</navigation>
